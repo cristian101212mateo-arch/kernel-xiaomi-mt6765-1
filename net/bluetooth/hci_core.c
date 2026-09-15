@@ -847,7 +847,7 @@ static int hci_init4_req(struct hci_request *req, unsigned long opt)
 	}
 
 	/* Set Default PHY parameters if command is supported */
-	if (hdev->commands[35] & 0x20) {
+	if (0 && (hdev->commands[35] & 0x20)) { /* PATCH: MTK fails LE_SET_DEFAULT_PHY */
 		struct hci_cp_le_set_default_phy cp;
 
 		cp.all_phys = 0x00;
