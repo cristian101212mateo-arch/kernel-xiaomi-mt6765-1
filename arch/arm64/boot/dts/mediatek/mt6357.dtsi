@@ -131,6 +131,11 @@
 		bc12_active = <1>;
 	};
 
+
+        mt6357_pulse_charger: mt6357-pulse-charger {
+                compatible = "mediatek,mt6357-pulse-charger";
+        };
+
 	mtk_ts_pmic: mtk_ts_pmic {
 		compatible = "mediatek,mtk_ts_pmic";
 		io-channels =
