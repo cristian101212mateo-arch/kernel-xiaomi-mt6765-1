@@ -13,7 +13,7 @@
 char *perfmgr_copy_from_user_for_proc(const char __user *buffer,
 		size_t count)
 {
-	char *buf = (char *)__get_free_page(GFP_USER);
+	char *buf = (char *)__get_free_page(GFP_KERNEL);
 
 	if (!buf)
 		return NULL;
