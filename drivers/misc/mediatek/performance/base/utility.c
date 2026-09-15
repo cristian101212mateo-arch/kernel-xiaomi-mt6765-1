@@ -4,6 +4,7 @@
  */
 
 #include <linux/uaccess.h>
+#include <linux/gfp.h>
 #include "mtk_perfmgr_internal.h"
 #ifdef CONFIG_TRACING
 #include <linux/kallsyms.h>
@@ -13,7 +14,7 @@
 char *perfmgr_copy_from_user_for_proc(const char __user *buffer,
 		size_t count)
 {
-	char *buf = (char *)__get_free_page(GFP_KERNEL);
+	char *buf = (char *)__get_free_page(GFP_USER);
 
 	if (!buf)
 		return NULL;
