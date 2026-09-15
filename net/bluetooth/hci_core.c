@@ -945,6 +945,15 @@ static int __hci_unconf_init(struct hci_dev *hdev)
 		return 0;
 
 	err = __hci_req_sync(hdev, hci_init0_req, 0, HCI_INIT_TIMEOUT, NULL);
+	if (err == -EBADRQC) {
+		/* HAL de Android responde 0x01 (Unknown HCI Command) a
+		 * READ_LOCAL_VERSION/READ_BD_ADDR. No es fatal: ignorar
+		 * y continuar con la inicializacion.
+		 */
+		BT_INFO("%s: HAL rejected init command (0x01), continuing anyway",
+			hdev->name);
+		err = 0;
+	}
 	if (err < 0)
 		return err;
 
