@@ -37,7 +37,7 @@
 #include <linux/mmc/host.h>
 #include <linux/mmc/mmc.h>
 #include <linux/mmc/sd.h>
-#include "queue.h"
+#include "../../mmc/core/queue.h"
 #include "mmc_ops.h"
 #include "core.h"
 #include "card.h"

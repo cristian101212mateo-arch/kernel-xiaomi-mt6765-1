@@ -88,6 +88,7 @@ dtbs: $(objtree)/dtboimg.cfg $(objtree)/dtbimg.cfg
 $(objtree)/dtboimg.cfg: FORCE
 	rm -f $@.tmp
 	$(foreach f,$(ABS_DTB_FILES),$(call mk_dtboimg_cfg,$(f),$@.tmp))
+	touch $@.tmp
 	if ! cmp -s $@.tmp $@; then \
 		mv $@.tmp $@; \
 	else \

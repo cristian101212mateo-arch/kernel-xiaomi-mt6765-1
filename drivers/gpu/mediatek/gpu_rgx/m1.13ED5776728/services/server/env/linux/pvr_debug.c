@@ -488,7 +488,7 @@ void PVRSRVDebugPrintf(IMG_UINT32 ui32DebugLevel,
 	va_end (vaArgs);
 }
 #else
-inline void PVRSRVDebugPrintf(IMG_UINT32 ui32DebugLevel,
+void PVRSRVDebugPrintf(IMG_UINT32 ui32DebugLevel,
 					   const IMG_CHAR *pszFullFileName,
 					   IMG_UINT32 ui32Line,
 					   const IMG_CHAR *pszFormat,
